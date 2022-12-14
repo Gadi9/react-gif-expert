@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 //export const AddCategory = ( { setCategories } ) => {
 export const AddCategory = ( { onNewCategory } ) => {  
 
-    const [ inputValue, setInputValue ] = useState( 'One Punch' )
+    const [ inputValue, setInputValue ] = useState( '' )
 
     /*
     const onInputChange = (event) => {
@@ -31,7 +32,7 @@ export const AddCategory = ( { onNewCategory } ) => {
     return (
         //<form onSubmit={ (event) => onSubmit(event) }>
         //Porque devuelve el mismo elemento (event) que utiliza la funcion
-        <form onSubmit={ onSubmit }>
+        <form onSubmit={ onSubmit } aria-label="form">
             <input
                 text="text"
                 placeholder="Buscar gifs"
@@ -42,4 +43,8 @@ export const AddCategory = ( { onNewCategory } ) => {
         </form>
 
   )
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired,
 }
